@@ -1,0 +1,66 @@
+<%- include('partials/head') %>
+
+<section class="hero">
+    <div>
+        <h4>Dashboard de administrador</h4>
+        <p>Usuarios registrados en la plataforma.</p>
+    </div>
+</section>
+
+<div class="tiles">
+    <div class="tile stat">
+        <i class="material-icons">group</i>
+        <div><small>Usuarios</small><span id="total" class="value">0</span></div>
+    </div>
+    <div class="tile stat">
+        <i class="material-icons">admin_panel_settings</i>
+        <div><small>Administradores</small><span id="total-admins" class="value">0</span></div>
+    </div>
+    <div class="tile stat">
+        <i class="material-icons">person_add</i>
+        <div><small>Nuevos (7 días)</small><span id="total-new" class="value">0</span></div>
+    </div>
+</div>
+
+<div class="panel">
+    <h6 class="panel-title">Listado de usuarios</h6>
+    <div class="table-scroll">
+        <table class="highlight users-table">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Edad</th>
+                    <th>Roles</th>
+                    <th>Fecha de registro</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="users-body"></tbody>
+        </table>
+    </div>
+</div>
+
+<div id="user-modal" class="modal">
+    <div class="modal-content">
+        <h5 id="m-full-name"></h5>
+        <div id="m-roles"></div>
+        <ul class="summary-list">
+            <li><small>ID</small><span id="m-id"></span></li>
+            <li><small>Email</small><span id="m-email"></span></li>
+            <li><small>Teléfono</small><span id="m-phoneNumber"></span></li>
+            <li><small>Fecha de nacimiento</small><span id="m-birthdate"></span></li>
+            <li><small>Edad</small><span id="m-age"></span></li>
+            <li><small>Dirección</small><span id="m-address"></span></li>
+            <li><small>Foto de perfil</small><span id="m-url_profile"></span></li>
+            <li><small>Registrado el</small><span id="m-createdAt"></span></li>
+            <li><small>Última actualización</small><span id="m-updatedAt"></span></li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close btn-flat">Cerrar</a>
+    </div>
+</div>
+
+<%- include('partials/scripts') %>

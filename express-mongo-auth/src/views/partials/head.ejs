@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> | AuthPortal</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<% if (locals.auth) { %>
+    <main class="auth-shell">
+        <aside class="auth-brand">
+            <div class="logo"><i class="material-icons">verified_user</i>AuthPortal</div>
+            <h2>Acceso seguro con JSON Web Tokens</h2>
+            <p>Gestiona tu cuenta y tus datos desde un solo lugar, con permisos según tu rol.</p>
+            <ul>
+                <li><i class="material-icons">lock</i>Contraseñas encriptadas con bcrypt</li>
+                <li><i class="material-icons">vpn_key</i>Sesiones firmadas con JWT</li>
+                <li><i class="material-icons">supervisor_account</i>Acceso por roles: user y admin</li>
+            </ul>
+        </aside>
+        <section class="auth-form">
+<% } else { %>
+    <nav class="topbar">
+        <div class="nav-wrapper container">
+            <a href="/" class="brand-logo left"><i class="material-icons">verified_user</i><span>AuthPortal</span></a>
+            <ul id="nav-links" class="right"></ul>
+        </div>
+    </nav>
+    <main class="container">
+<% } %>

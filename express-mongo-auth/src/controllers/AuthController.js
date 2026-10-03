@@ -4,7 +4,8 @@ class AuthController {
 
     async signUp(req, res, next) {
         try {
-            const payload = req.body;
+            // El registro público siempre asigna el rol user (se ignora roles del body)
+            const { roles, ...payload } = req.body;
             if (!payload.email || !payload.password)
                 return res.status(400).json({ message: 'El email y password son requeridos' });
 

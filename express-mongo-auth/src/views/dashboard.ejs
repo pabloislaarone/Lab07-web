@@ -1,0 +1,46 @@
+<%- include('partials/head') %>
+
+<section class="hero">
+    <div class="avatar-wrap">
+        <img id="avatar" class="avatar" alt="Foto de perfil" hidden>
+        <div id="avatar-initials" class="initials"></div>
+    </div>
+    <div>
+        <h4>Bienvenido, <span id="welcome-name"></span></h4>
+        <p>Aquí están tus datos.</p>
+        <div id="roles"></div>
+    </div>
+</section>
+
+<div class="tiles">
+    <div class="tile">
+        <i class="material-icons">email</i>
+        <div><small>Email</small><span id="email" class="value"></span></div>
+    </div>
+    <div class="tile">
+        <i class="material-icons">phone</i>
+        <div><small>Teléfono</small><span id="phoneNumber" class="value"></span></div>
+    </div>
+    <div class="tile">
+        <i class="material-icons">cake</i>
+        <div><small>Fecha de nacimiento</small><span id="birthdate" class="value"></span></div>
+    </div>
+    <div class="tile">
+        <i class="material-icons">hourglass_empty</i>
+        <div><small>Edad</small><span id="age" class="value"></span></div>
+    </div>
+    <div class="tile">
+        <i class="material-icons">place</i>
+        <div><small>Dirección</small><span id="address" class="value"></span></div>
+    </div>
+    <div class="tile">
+        <i class="material-icons">event_available</i>
+        <div><small>Registrado el</small><span id="createdAt" class="value"></span></div>
+    </div>
+</div>
+
+<a href="/profile" class="btn btn-brand waves-effect waves-light">
+    <i class="material-icons left">edit</i>Editar mi cuenta
+</a>
+
+<%- include('partials/scripts') %>

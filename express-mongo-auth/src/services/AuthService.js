@@ -2,13 +2,20 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import userRepository from '../repositories/UserRepository.js';
 import roleRepository from '../repositories/RoleRepository.js';
+import { isValidPassword, PASSWORD_MESSAGE } from '../utils/validators.js';
 
 class AuthService {
 
-    async signUp({ email, password, name, roles = ['user'] }) {
+    async signUp({ email, password, name, lastName, phoneNumber, birthdate, url_profile, address, roles = ['user'] }) {
         const existing = await userRepository.findByEmail(email);
         if (existing) {
             const err = new Error('El email ya se encuentra en uso');
+            err.status = 400;
+            throw err;
+        }
+
+        if (!isValidPassword(password)) {
+            const err = new Error(PASSWORD_MESSAGE);
             err.status = 400;
             throw err;
         }
@@ -25,12 +32,15 @@ class AuthService {
             roleDocs.push(roleDoc._id);
         }
 
-        const user = await userRepository.create({ email, password: hashed, name, roles: roleDocs });
+        const user = await userRepository.create({
+            email, password: hashed, name, lastName, phoneNumber, birthdate, url_profile, address, roles: roleDocs
+        });
 
         return {
             id: user._id,
             email: user.email,
-            name: user.name
+            name: user.name,
+            lastName: user.lastName
         };
     }
 

@@ -1,0 +1,69 @@
+<%- include('partials/head') %>
+
+<section class="hero">
+    <div class="avatar-wrap">
+        <img id="avatar" class="avatar" alt="Foto de perfil" hidden>
+        <div id="avatar-initials" class="initials"></div>
+    </div>
+    <div>
+        <h4 id="full-name"></h4>
+        <p id="hero-email"></p>
+        <div id="roles"></div>
+    </div>
+</section>
+
+<div class="row">
+    <div class="col s12 l4">
+        <div class="panel">
+            <h6 class="panel-title">Resumen</h6>
+            <ul class="summary-list">
+                <li><small>Edad</small><span id="age"></span></li>
+                <li><small>Registrado el</small><span id="createdAt"></span></li>
+                <li><small>Última actualización</small><span id="updatedAt"></span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col s12 l8">
+        <div class="panel">
+            <h6 class="panel-title">Mis datos</h6>
+            <form id="profile-form" novalidate>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" placeholder=" " disabled>
+                        <label for="email" class="active">Email</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input id="name" type="text" placeholder=" ">
+                        <label for="name" class="active">Nombre</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input id="lastName" type="text" placeholder=" " required>
+                        <label for="lastName" class="active">Apellido</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input id="phoneNumber" type="tel" placeholder=" " required>
+                        <label for="phoneNumber" class="active">Teléfono</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input id="birthdate" type="date" required>
+                        <label for="birthdate" class="active">Fecha de nacimiento</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="address" type="text" placeholder="Av. Ejemplo 123, Lima">
+                        <label for="address" class="active">Dirección</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="url_profile" type="url" placeholder="https://...">
+                        <label for="url_profile" class="active">URL de la foto de perfil</label>
+                    </div>
+                </div>
+                <p id="form-error" class="form-error"></p>
+                <button class="btn btn-brand waves-effect waves-light" type="submit">
+                    <i class="material-icons left">save</i>Guardar cambios
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/scripts') %>

@@ -1,0 +1,42 @@
+<%- include('partials/head') %>
+
+<div class="auth-box">
+    <h4>Crear cuenta</h4>
+    <p class="subtitle">Completa tus datos para registrarte.</p>
+
+    <form id="signup-form" novalidate>
+        <div class="row">
+            <div class="input-field col s12 m6">
+                <input id="name" type="text" required>
+                <label for="name">Nombre</label>
+            </div>
+            <div class="input-field col s12 m6">
+                <input id="lastName" type="text" required>
+                <label for="lastName">Apellido</label>
+            </div>
+            <div class="input-field col s12 m6">
+                <input id="phoneNumber" type="tel" required>
+                <label for="phoneNumber">Teléfono</label>
+            </div>
+            <div class="input-field col s12 m6">
+                <input id="birthdate" type="date" required>
+                <label for="birthdate" class="active">Fecha de nacimiento</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="email" type="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="password" type="password" required>
+                <label for="password">Password</label>
+                <span class="helper-text">Mínimo 8 caracteres, 1 mayúscula, 1 dígito y 1 caracter especial (# $ % &amp; * @)</span>
+            </div>
+        </div>
+        <p id="form-error" class="form-error"></p>
+        <button class="btn btn-brand waves-effect waves-light" type="submit">Registrarme</button>
+    </form>
+
+    <p class="switch-link">¿Ya tienes cuenta? <a href="/signIn">Inicia sesión</a></p>
+</div>
+
+<%- include('partials/scripts') %>
